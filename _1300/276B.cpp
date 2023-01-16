@@ -2,8 +2,6 @@
 using namespace std;
 #define ll long long int
 
-int a1[100001],a2[100001];
-bool b1[100001];
 int main()
 {
 	string s,ans;

@@ -1,5 +1,5 @@
 # A2OJ-ladder
-Here we will be posting solutions to A2OJ ladder probelms
+Here we will be posting solutions to A2OJ ladder problems
 
 If you wish to contribute to this repository you can do so by forking and issuing a pull request.
 

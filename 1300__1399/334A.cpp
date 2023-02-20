@@ -13,17 +13,8 @@ typedef pair<int,int> pi;
 #define MP make_pair
 #define FOR(i,a,b) for(ll i = a;i <= b; i++)
 
-
-
-
-
 ////////////////////////Template ends////////////////////////
-void solve(ll tc)
-{
-    //start coding here
-    
-    cout <<"case: "<<tc<<endl;
-}
+
 
 ////////////////// main function to call test cases//////////////
 int main()
@@ -36,11 +27,14 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    ll t,tc=1;
-    cin >> t;
-    while(t--)
-    {
-        solve(tc++);
+    int n;
+    cin >> n;
+    int sum = n*n+1;
+    int i = 1;
+    for(int k=1;k<=n;k++){
+        for(int j=1;j<=n/2;j++)
+            cout << i <<" "<<sum-i++<<" ";
+        cout << "\n";
     }
     return 0;
 }

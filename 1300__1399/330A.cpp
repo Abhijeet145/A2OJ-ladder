@@ -18,12 +18,7 @@ typedef pair<int,int> pi;
 
 
 ////////////////////////Template ends////////////////////////
-void solve(ll tc)
-{
-    //start coding here
-    
-    cout <<"case: "<<tc<<endl;
-}
+ 
 
 ////////////////// main function to call test cases//////////////
 int main()
@@ -36,11 +31,36 @@ int main()
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    ll t,tc=1;
-    cin >> t;
-    while(t--)
-    {
-        solve(tc++);
+    int r,c;
+    cin >> r>>c;
+    vector<string> v(r);
+    FOR(i,0,r){
+        cin >> v[i];
     }
+    int ans = 0,rc=0;
+    FOR(i,0,r){
+        bool evil = false;
+        FOR(j,0,c){
+            if(v[i][j]=='S'){
+                evil = true;
+                break;
+            }
+        }
+        if(!evil)
+            rc++;
+    }
+    ans = rc*c;
+    FOR(j,0,c){
+        bool evil = false;
+        FOR(i,0,r){
+            if(v[i][j]=='S'){
+                evil = true;
+                break;
+            }
+        }
+        if(!evil)
+            ans += r - rc;
+    }
+    cout << ans <<"\n";
     return 0;
 }

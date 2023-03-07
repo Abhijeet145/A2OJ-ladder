@@ -19,12 +19,25 @@ typedef vector<pi> vpi;
 
 
 
+
 ////////////////////////Template ends////////////////////////
 void solve(ll tc)
 {
     //start coding here
-    
-    int ans;
+    int n;
+    cin >> n;
+    vpi v(n);
+    f0tn{
+        cin >>v[i].F >>v[i].S;
+    }
+    sort(v.B,v.E);
+    string ans = "Poor Alex";
+    FOR(i,0,n-1){
+        if(v[i].second > v[i+1].second){
+            ans = "Happy Alex";
+            break;
+        }
+    }
     cout <<ans <<"\n";
 }
 

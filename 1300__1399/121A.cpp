@@ -19,14 +19,27 @@ typedef vector<pi> vpi;
 #define FOR(i,a,b) for(ll i = a;i < b; i++)
 #define f0tn for(int i=0;i<n;i++)
 
-
+vl v;
+void f(ll x){
+    v.PB(x);
+    if(x<1e10)
+    f(x*10+4),f(x*10+7);
+}
 
 ////////////////////////Template ends////////////////////////
 void solve(ll tc)
 {
     //start coding here
-    
-    int ans;
+    ll l,r;
+    cin >> l >> r;
+    f(0);
+    sort(v.B,v.E);
+    ll ans = 0;
+    int i = LB(v.B,v.E,l) - v.B;
+    do{
+        ans += (min(r,v[i]) - l + 1)* v[i];
+        l = v[i++]+1;
+    }while(v[i-1]<=r);
     cout <<ans <<"\n";
 }
 

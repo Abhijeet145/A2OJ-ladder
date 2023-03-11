@@ -26,9 +26,17 @@ typedef vector<pi> vpi;
 void solve(ll tc)
 {
     //start coding here
-    
-    int ans;
-    cout <<ans <<"\n";
+    int n;
+    cin >> n;
+    vi v(n);
+    f0tn{
+        cin >> v[i];
+    }
+    sort(v.B,v.E);
+    swap(v[0],v[n-1]);
+    f0tn
+        cout <<v[i] <<" ";
+    cout <<"\n";
 }
 
 ////////////////// main function to call test cases//////////////

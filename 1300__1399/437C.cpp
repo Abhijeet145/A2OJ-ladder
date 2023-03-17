@@ -31,8 +31,36 @@ typedef vector<vi> vvi;
 void solve(ll tc)
 {
     //start coding here
+    int n,m;
+    cin >> n >> m;
+
     
-    int ans;
+    vpi v(n+1);
+    FOR(i,1,n+1){
+        cin >> v[i].first;
+        v[i].second = i;
+    }
+    sort(v.B,v.E);
+    vvi mat(n+1,vi(n+1,-1));
+    FOR(i,0,m){
+        int a,b;
+        cin >> a >> b;
+        mat[a][b]=1;
+        mat[b][a]=1;
+    }
+    ll ans = 0;
+    for(auto x:v){
+        int u = x.second;
+        int val = x.first;
+        FOR(i,1,n+1){
+            if(mat[u][i]!=-1){
+                ans += val;
+                mat[u][i]=-1;
+                mat[i][u]=-1;
+            }
+        }
+    }
+
     cout <<ans <<"\n";
 }
 

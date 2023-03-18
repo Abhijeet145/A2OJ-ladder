@@ -32,8 +32,41 @@ typedef vector<vi> vvi;
 void solve(ll tc)
 {
     //start coding here
+    int n,s,t;
+    cin >> n >> s >> t;
+
+    vi adj[n+1];
+    f0tn{
+        int num;
+        cin >> num;
+        adj[i+1].push_back(num);
+    }
     
-    int ans;
+    int ans=-1;
+    queue<int> q;
+    q.push(s);
+    vb vis(n+1,false);
+    vis[s] = true;
+    int steps = 1;
+    while(!q.empty()){
+        int size = q.size();
+        while(size--){
+            int u = q.front(); q.pop();
+            for(auto v:adj[u]){
+                if(v==t){
+                    ans = steps;
+                    break;
+                }
+                if(!vis[v])
+                q.push(v);
+                vis[v]=true;
+            }
+            if(ans != -1)break;
+        }
+        if(ans != -1)break;
+        steps++;
+    }
+    if(s==t) ans = 0;
     cout <<ans <<"\n";
 }
 

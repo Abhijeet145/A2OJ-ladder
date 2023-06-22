@@ -64,26 +64,3 @@ int main()
     }
     return 0;
 }
-
-
-
-
-
-
-// #include <iostream>
-// using namespace std;
-// typedef long long ll;
-// ll n,mn=1e11;
-// void rec(ll x, ll c){
-// if(x>1e11) return;
-// if(x>=n && c==0) mn=min(mn,x);
- 
-// rec(x*10+4,c+1);
-// rec(x*10+7,c-1);
-// }
-  
-// int main() {
-// cin>>n;
-// rec(0,0);
-// cout<<mn;
-// }
